@@ -1,0 +1,43 @@
+1. Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+
+Sort—sorts and outputs lines of code in the file alphabetically.
+
+Output: https://cl.ly/f0e00b8e12fc
+
+wc—prints the file's newline, word, and byte counts.
+
+Output: https://cl.ly/006f0a79c043
+
+uniq—prints out a sorted and deduced list of lines in a file.
+
+Output: https://cl.ly/9eb95e8b55c3
+
+2. Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+
+Command: uniq | wc commands.js
+Output: https://cl.ly/55f314c49767
+Reason: The output is the same, only because there are no repetitive lines in my commands.js file (which `uniq` would have removed, as long as the lines were next to one another). However, I wanted to try this because I imagine it would be useful to dedupe a file and then look at the remaining newline/byte/word counts.
+
+Command: echo "//This is a comment" >> commands.js | fgrep "//This is a comment" commands.js
+Output: https://cl.ly/262689290ef0
+Reason: Echo adds the comment to the commands.js file, while fgrep offers confirmation that the change in the file has been made, as it only returns content if the line of text it's looking for exists within the file.
+
+
+3-5 in GitHub
+
+6. 
+
+var myname = 'Natalie Marie Thomas';
+
+function reverseString(string){
+  var sentence = string.split(' ');
+  for (var i=0; i < sentence.length; i++) {
+    var word = sentence[i].split('').reverse();
+    word = word.join('');
+    sentence[i] = word;
+  }
+  sentence = sentence.join(' ')
+  return sentence;
+}
+
+reverseString(myname)
